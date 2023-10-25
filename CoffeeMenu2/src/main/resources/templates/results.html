@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<htmlxmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>View All Menu Items</title>
+</head>
+<body>
+<form>
+<table>
+<tr th:each="currentMenu : ${menu}">
+<td th:text="${currentMenu.id}"/> 
+<td th:text="${currentMenu.itemName}"/> 
+<td th:text="${currentMenu.itemDescription}"/>
+<td th:text="${currentMenu.itemPrice}"/>
+<td><a th:href="@{/edit/{id}(id=${currentMenu.id})}">Edit</a></td>
+<td><a th:href="@{/delete/{id}(id=${currentMenu.id})}">Delete</a></td>
+</tr>
+</table>
+</form>
+<a href="../add.html">Add a new Item</a>
+</body>
+</html>
